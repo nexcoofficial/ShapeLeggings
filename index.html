@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShapeLeggings - Premium Fashion Leggings</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --cream: #F5F5DC;
+            --charcoal: #36454F;
+            --light-gray: #f8f8f8;
+            --medium-gray: #e0e0e0;
+            --dark-gray: #666;
+            --black: #222;
+            --white: #fff;
+            --primary-font: 'Poppins', sans-serif;
+            --secondary-font: 'Playfair Display', serif;
+            --shadow: 0 5px 15px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--primary-font);
+            color: var(--charcoal);
+            line-height: 1.6;
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: var(--secondary-font);
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+        }
+        
+        h2 {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+        }
+        
+        h3 {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--gold);
+            color: var(--white);
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            background-color: var(--charcoal);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+        
+        .btn-lg {
+            font-size: 1.2rem;
+            padding: 16px 40px;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 2px;
+            background-color: var(--gold);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            overflow: hidden;
+            background-color: var(--charcoal);
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.4);
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .hero-title {
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            margin-bottom: 2rem;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            opacity: 0.8;
+            transition: opacity 0.5s ease, transform 20s ease;
+        }
+        
+        .hero:hover .hero-image {
+            transform: scale(1.1);
+        }
+        
+        .hero-scroll {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            color: var(--white);
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-20px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+        }
+        
+        /* Flash Sale Banner */
+        .flash-sale {
+            background-color: var(--gold);
+            color: var(--white);
+            padding: 15px 0;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        .timer-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .timer-box {
+            background-color: var(--white);
+            color: var(--charcoal);
+            min-width: 60px;
+            padding: 5px;
+            border-radius: 4px;
+            box-shadow: var(--shadow);
+        }
+        
+        .timer-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .timer-text {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+        }
+        
+        /* Features Section */
+        .features {
+            background-color: var(--light-gray);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+        
+        /* Product Section */
+        .product-hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .product-media {
+            width: 100%;
+            max-width: 600px;
+        }
+        
+        .product-showcase {
+            width: 100%;
+            max-width: 600px;
+        }
+        
+        .product-title {
+            margin-bottom: 15px;
+        }
+        
+        .product-description {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            color: var(--dark-gray);
+        }
+        
+        .price-container {
+            margin: 25px 0;
+        }
+        
+        .price-original {
+            font-size: 1.2rem;
+            text-decoration: line-through;
+            color: var(--dark-gray);
+        }
+        
+        .price-current {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gold);
+            display: block;
+        }
+        
+        .viewers-count {
+            background-color: var(--light-gray);
+            padding: 10px 15px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .stock-count {
+            color: #e74c3c;
+            font-weight: 600;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            display: inline-block;
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        /* Color Selection */
+        .color-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .color-option {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid var(--medium-gray);
+            position: relative;
+        }
+        
+        .color-option.active {
+            border-color: var(--gold);
+            transform: scale(1.1);
+        }
+        
+        .color-option.active::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-shadow: 0 0 2px rgba(0,0,0,0.8);
+        }
+        
+        .color-black { background-color: #000; }
+        .color-lavender { background-color: #E6E6FA; }
+        .color-lake-blue { background-color: #5F9EA0; }
+        .color-pink { background-color: #FFB6C1; }
+        .color-purple { background-color: #800080; }
+        .color-dark-blue { background-color: #00008B; }
+        .color-crimson { background-color: #DC143C; }
+        .color-gray { background-color: #808080; }
+        .color-orange { background-color: #FFA500; }
+        .color-green { background-color: #008000; }
+        .color-coco { background-color: #D2691E; }
+        
+        /* Product Gallery */
+        .product-gallery {
+            margin-top: 60px;
+        }
+        
+        .gallery-slider {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .gallery-item {
+            height: 200px;
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .gallery-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.05);
+        }
+        
+        /* Size Guide */
+        .size-guide {
+            margin: 30px 0;
+        }
+        
+        .size-guide-btn {
+            background: none;
+            border: none;
+            color: var(--dark-gray);
+            text-decoration: underline;
+            cursor: pointer;
+            font-size: 0.9rem;
+            padding: 5px 0;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background-color: var(--white);
+            width: 90%;
+            max-width: 700px;
+            border-radius: 8px;
+            padding: 20px;
+            position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--charcoal);
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            background-color: var(--cream);
+        }
+        
+        .testimonial-slider {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .testimonial-card {
+            flex: 0 0 100%;
+            padding: 30px;
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            margin: 0 15px;
+            min-width: 280px;
+            opacity: 0.7;
+            transform: scale(0.85);
+            transition: var(--transition);
+        }
+        
+        .testimonial-card.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .testimonial-rating {
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-author::before {
+            content: '—';
+            margin-right: 5px;
+        }
+        
+        .testimonial-navigation {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 10px;
+        }
+        
+        .testimonial-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--medium-gray);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .testimonial-dot.active {
+            background-color: var(--gold);
+            transform: scale(1.3);
+        }
+        
+        /* CTA Section */
+        .cta {
+            text-align: center;
+            padding: 80px 0;
+            background-color: var(--charcoal);
+            color: var(--white);
+        }
+        
+        .cta-btn {
+            background-color: var(--gold);
+            margin-top: 20px;
+        }
+        
+        /* Sticky Banner */
+        .sticky-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--white);
+            padding: 15px 20px;
+            box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .sticky-banner.show {
+            transform: translateY(0);
+        }
+        
+        .sticky-price {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .sticky-price span {
+            color: var(--gold);
+        }
+        
+        .sticky-btn {
+            font-size: 0.9rem;
+            padding: 8px 20px;
+        }
+        
+        /* Carousel */
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            border-radius: 8px;
+        }
+        
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .carousel-item {
+            flex: 0 0 100%;
+        }
+        
+        .carousel-img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .carousel-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255,255,255,0.5);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--charcoal);
+            z-index: 5;
+            transition: var(--transition);
+        }
+        
+        .carousel-control:hover {
+            background-color: rgba(255,255,255,0.8);
+        }
+        
+        .carousel-prev {
+            left: 15px;
+        }
+        
+        .carousel-next {
+            right: 15px;
+        }
+        
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            bottom: 15px;
+            left: 0;
+            right: 0;
+            gap: 8px;
+        }
+        
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.5);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .carousel-dot.active {
+            background-color: var(--white);
+            transform: scale(1.3);
+        }
+        
+        /* Thumbnail Slider */
+        .thumbnail-slider {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            overflow-x: auto;
+            scrollbar-width: thin;
+            padding-bottom: 10px;
+        }
+        
+        .thumbnail-slider::-webkit-scrollbar {
+            height: 6px;
+        }
+        
+        .thumbnail-slider::-webkit-scrollbar-thumb {
+            background-color: var(--medium-gray);
+            border-radius: 3px;
+        }
+        
+        .thumbnail-item {
+            flex: 0 0 70px;
+            height: 70px;
+            border-radius: 4px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: var(--transition);
+        }
+        
+        .thumbnail-item.active {
+            border-color: var(--gold);
+        }
+        
+        .thumbnail-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* OOTD Inspiration */
+        .ootd-section {
+            background-color: var(--light-gray);
+        }
+        
+        .ootd-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .ootd-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .ootd-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .ootd-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .fade-in.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .delay-1 { transition-delay: 0.2s; }
+        .delay-2 { transition-delay: 0.4s; }
+        .delay-3 { transition-delay: 0.6s; }
+        .delay-4 { transition-delay: 0.8s; }
+        
+        /* Media Queries */
+        @media (min-width: 768px) {
+            .product-hero {
+                flex-direction: row;
+            }
+            
+            .testimonial-card {
+                flex: 0 0 calc(33.333% - 30px);
+            }
+            
+            .carousel-control {
+                width: 50px;
+                height: 50px;
+                font-size: 2rem;
+            }
+        }
+        
+        @media (min-width: 992px) {
+            .testimonial-track {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+            
+            .testimonial-card {
+                opacity: 1;
+                transform: scale(1);
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="https://down-id.img.susercontent.com/file/5af0804b7b9b14f0a118a15d7038dffd@resize_w450_nl.webp" alt="ShapeLeggings" class="hero-image">
+        <div class="hero-content">
+            <h1 class="hero-title">ShapeLeggings</h1>
+            <p class="hero-subtitle">Dirancang untuk kenyamanan dan gaya premium</p>
+            <a href="#product" class="btn btn-lg">Lihat Koleksi</a>
+        </div>
+        <div class="hero-scroll" id="scrollDown">
+            &#10095;&#10095;
+        </div>
+    </section>
+    
+    <!-- Flash Sale Banner -->
+    <div class="flash-sale">
+        <div class="container">
+            <p>🔥 FLASH SALE 24 JAM! Hanya untuk 50 Fashionista Pertama!</p>
+            <div class="timer-container">
+                <div class="timer-box">
+                    <div class="timer-number" id="timer-hours">24</div>
+                    <div class="timer-text">Jam</div>
+                </div>
+                <div class="timer-box">
+                    <div class="timer-number" id="timer-mins">00</div>
+                    <div class="timer-text">Menit</div>
+                </div>
+                <div class="timer-box">
+                    <div class="timer-number" id="timer-secs">00</div>
+                    <div class="timer-text">Detik</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Features Section -->
+    <section class="section features">
+        <div class="container">
+            <h2 class="section-title fade-in">Mengapa ShapeLeggings?</h2>
+            <div class="features-grid">
+                <div class="feature-card fade-in delay-1">
+                    <div class="feature-icon">💪</div>
+                    <h3>Bahan Premium</h3>
+                    <p>Dirancang dengan material elastis berkualitas tinggi yang nyaman dipakai sepanjang hari</p>
+                </div>
+                <div class="feature-card fade-in delay-2">
+                    <div class="feature-icon">👖</div>
+                    <h3>High Waist Design</h3>
+                    <p>Memperindah siluet tubuh dan memberi dukungan maksimal saat beraktivitas</p>
+                </div>
+                <div class="feature-card fade-in delay-3">
+                    <div class="feature-icon">👜</div>
+                    <h3>Kantong Samping</h3>
+                    <p>Praktis untuk menyimpan smartphone dan barang penting lainnya saat berolahraga</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Product Section -->
+    <section class="section" id="product">
+        <div class="container">
+            <div class="product-hero">
+                <div class="product-media">
+                    <div class="carousel">
+                        <div class="carousel-inner" id="productCarousel">
+                            <div class="carousel-item">
+                                <img src="https://down-id.img.susercontent.com/file/5af0804b7b9b14f0a118a15d7038dffd@resize_w450_nl.webp" alt="ShapeLeggings Black" class="carousel-img">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://down-id.img.susercontent.com/file/0e062c234be2b13ab104ae465a9f2a06@resize_w450_nl.webp" alt="ShapeLeggings Lavender" class="carousel-img">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://down-id.img.susercontent.com/file/b004b302dfb7a07c3383f829181b1df1@resize_w450_nl.webp" alt="ShapeLeggings Lake Blue" class="carousel-img">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://down-id.img.susercontent.com/file/19c2fdc1d5721248e94e81a5e2dbe3c3@resize_w450_nl.webp" alt="ShapeLeggings Pink" class="carousel-img">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://down-id.img.susercontent.com/file/e6364631cfa7c3fce551b7ef97df6879@resize_w450_nl.webp" alt="ShapeLeggings Purple" class="carousel-img">
+                            </div>
+                        </div>
+                        <div class="carousel-control carousel-prev">&#10094;</div>
+                        <div class="carousel-control carousel-next">&#10095;</div>
+                        <div class="carousel-indicators" id="carouselDots"></div>
+                    </div>
+                    <div class="thumbnail-slider" id="thumbnailSlider"></div>
+                </div>
+                
+                <div class="product-showcase">
+                    <h2 class="product-title">ShapeLeggings Premium</h2>
+                    <div class="viewers-count">
+                        <span>👁️</span>
+                        <span id="viewers">2187</span> orang sedang melihat produk ini
+                    </div>
+                    <p class="product-description">Legging premium dengan bahan spandex elastis berkualitas tinggi yang nyaman dipakai sepanjang hari. Desain high waist yang stylish dengan kantong samping yang praktis.</p>
+                    
+                    <div class="price-container">
+                        <div class="price-original">Harga Normal: Rp 277.500</div>
+                        <div class="price-current">Promo Hari Ini: Rp 185.000</div>
+                    </div>
+                    
+                    <div class="stock-count">
+                        ⚠️ Sisa stok: <span id="stock">27</span> pcs
+                    </div>
+                    
+                    <h3>Pilih Warna:</h3>
+                    <div class="color-options">
+                        <div class="color-option color-black active" data-color="Black" data-image="https://down-id.img.susercontent.com/file/5af0804b7b9b14f0a118a15d7038dffd@resize_w450_nl.webp"></div>
+                        <div class="color-option color-lavender" data-color="Lavender" data-image="https://down-id.img.susercontent.com/file/0e062c234be2b13ab104ae465a9f2a06@resize_w450_nl.webp"></div>
+                        <div class="color-option color-lake-blue" data-color="Lake Blue" data-image="https://down-id.img.susercontent.com/file/b004b302dfb7a07c3383f829181b1df1@resize_w450_nl.webp"></div>
+                        <div class="color-option color-pink" data-color="Pink" data-image="https://down-id.img.susercontent.com/file/19c2fdc1d5721248e94e81a5e2dbe3c3@resize_w450_nl.webp"></div>
+                        <div class="color-option color-purple" data-color="Purple" data-image="https://down-id.img.susercontent.com/file/e6364631cfa7c3fce551b7ef97df6879@resize_w450_nl.webp"></div>
+                        <div class="color-option color-dark-blue" data-color="Dark Blue" data-image="https://down-id.img.susercontent.com/file/95214a4eee8443ba68f6a74b2b6132fd@resize_w450_nl.webp"></div>
+                        <div class="color-option color-crimson" data-color="Crimson" data-image="https://down-id.img.susercontent.com/file/73aabb1470dc3fa46bb14202b265472f@resize_w450_nl.webp"></div>
+                        <div class="color-option color-gray" data-color="Gray" data-image="https://down-id.img.susercontent.com/file/251f745a30f8b82ece881f0be68a8fc1@resize_w450_nl.webp"></div>
+                    </div>
+                    
+                    <div class="size-guide">
+                        <button class="size-guide-btn" id="sizeGuideBtn">Lihat Panduan Ukuran</button>
+                    </div>
+                    
+                    <a href="https://mila.orderonline.id/shapeleggings" class="btn btn-lg">PESAN SEKARANG - Dapatkan Style Premium</a>
+                </div>
+            </div>
+            
+            <div class="product-gallery">
+                <h2 class="section-title fade-in">ShapeLeggings Premium Gallery</h2>
+                <div class="gallery-slider fade-in">
+                    <div class="gallery-item">
+                        <img src="https://cdn.newfastcdn.com/image/6c054ff46459a59b4c8ee190f0dad492c4b538a7.gif" alt="ShapeLeggings Gallery" class="gallery-image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://cdn.newfastcdn.com/image/858a9c6e2e53b863b684dcb906ea7c67236f6e6e.gif" alt="ShapeLeggings Gallery" class="gallery-image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://cdn.newfastcdn.com/image/ad881b879bf0869846d7e2ceedc4ae6867a762f6.gif" alt="ShapeLeggings Gallery" class="gallery-image">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://cdn.newfastcdn.com/image/a0db9f2a6fe720af26700a89d2eaf6fa33a66409.gif" alt="ShapeLeggings Gallery" class="gallery-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- OOTD Inspiration -->
+    <section class="section ootd-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Inspirasi OOTD</h2>
+            <div class="ootd-grid fade-in">
+                <div class="ootd-item">
+                    <img src="https://cdn.newfastcdn.com/image/6293deafcbacecb45b113921b40ad6e4dbf7e7c2.jpeg" alt="OOTD Inspiration" class="ootd-img">
+                </div>
+                <div class="ootd-item">
+                    <img src="https://cdn.newfastcdn.com/image/7f936973469652b0032944752f7aeee0a898a36d.jpeg" alt="OOTD Inspiration" class="ootd-img">
+                </div>
+                <div class="ootd-item">
+                    <img src="https://cdn.newfastcdn.com/image/5012fe8293eb2dd4ce7d4f200829a78fc75f3735.jpeg" alt="OOTD Inspiration" class="ootd-img">
+                </div>
+                <div class="ootd-item">
+                    <img src="https://cdn.newfastcdn.com/image/030016a5b86f9c97e2f97a85645947dbd957ff94-600.jpeg" alt="OOTD Inspiration" class="ootd-img">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="section testimonials">
+        <div class="container">
+            <h2 class="section-title fade-in">Apa Kata Mereka</h2>
+            <div class="testimonial-slider fade-in">
+                <div class="testimonial-track" id="testimonialTrack">
+                    <div class="testimonial-card active">
+                        <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                        <p>"Bahannya premium banget! Nyaman dipakai seharian dan modelnya bikin pede. Worth it!"</p>
+                        <div class="testimonial-author">Sinta R., Jakarta</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                        <p>"Kualitas jahitan rapi, bahan tidak mudah kusut. Cocok untuk acara formal maupun casual."</p>
+                        <div class="testimonial-author">Maya D., Surabaya</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                        <p>"Ukurannya pas banget! Design-nya timeless, bisa dipake bertahun-tahun."</p>
+                        <div class="testimonial-author">Lina S., Bandung</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">⭐⭐⭐⭐⭐</div>
+                        <p>"Packagingnya bagus, bahan sesuai ekspektasi. Pasti order warna lain!"</p>
+                        <div class="testimonial-author">Rika W., Medan</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="section cta">
+        <div class="container">
+            <h2>Upgrade Gaya Fashionmu Sekarang!</h2>
+            <p>Jangan lewatkan kesempatan mendapatkan ShapeLeggings dengan promo spesial hari ini.</p>
+            <a href="https://mila.orderonline.id/shapeleggings" class="btn btn-lg cta-btn">PESAN SEKARANG - Dapatkan Style Premium</a>
+        </div>
+    </section>
+    
+    <!-- Size Guide Modal -->
+    <div class="modal" id="sizeModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeModal">&times;</button>
+            <h3>Panduan Ukuran</h3>
+            <img src="https://down-id.img.susercontent.com/file/sg-11134274-7rfff-m9u0pk14tziu87@resize_w1750_nl.webp" alt="Size Guide" style="width: 100%;">
+        </div>
+    </div>
+    
+    <!-- Sticky Banner -->
+    <div class="sticky-banner" id="stickyBanner">
+        <div class="sticky-price">
+            Promo: <span>Rp 185.000</span>
+        </div>
+        <a href="https://mila.orderonline.id/shapeleggings" class="btn sticky-btn">PESAN SEKARANG</a>
+    </div>
+    
+    <script>
+        // DOM Elements
+        const scrollDown = document.getElementById('scrollDown');
+        const stickyBanner = document.getElementById('stickyBanner');
+        const sizeGuideBtn = document.getElementById('sizeGuideBtn');
+        const sizeModal = document.getElementById('sizeModal');
+        const closeModal = document.getElementById('closeModal');
+        const productCarousel = document.getElementById('productCarousel');
+        const carouselDots = document.getElementById('carouselDots');
+        const carouselPrev = document.querySelector('.carousel-prev');
+        const carouselNext = document.querySelector('.carousel-next');
+        const thumbnailSlider = document.getElementById('thumbnailSlider');
+        const colorOptions = document.querySelectorAll('.color-option');
+        const testimonialTrack = document.getElementById('testimonialTrack');
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const viewersCounter = document.getElementById('viewers');
+        const stockCounter = document.getElementById('stock');
+        const timerHours = document.getElementById('timer-hours');
+        const timerMins = document.getElementById('timer-mins');
+        const timerSecs = document.getElementById('timer-secs');
+        
+        // Images for product carousel
+        const productImages = [
+            'https://down-id.img.susercontent.com/file/5af0804b7b9b14f0a118a15d7038dffd@resize_w450_nl.webp',
+            'https://down-id.img.susercontent.com/file/0e062c234be2b13ab104ae465a9f2a06@resize_w450_nl.webp',
+            'https://down-id.img.susercontent.com/file/b004b302dfb7a07c3383f829181b1df1@resize_w450_nl.webp',
+            'https://down-id.img.susercontent.com/file/19c2fdc1d5721248e94e81a5e2dbe3c3@resize_w450_nl.webp',
+            'https://down-id.img.susercontent.com/file/e6364631cfa7c3fce551b7ef97df6879@resize_w450_nl.webp',
+            'https://down-id.img.susercontent.com/file/95214a4eee8443ba68f6a74b2b6132fd@resize_w450_nl.webp',
+            'https://down-id.img.susercontent.com/file/73aabb1470dc3fa46bb14202b265472f@resize_w450_nl.webp',
+            'https://down-id.img.susercontent.com/file/251f745a30f8b82ece881f0be68a8fc1@resize_w450_nl.webp'
+        ];
+        
+        // Initialize Carousel
+        let currentSlide = 0;
+        
+        function updateCarousel() {
+            productCarousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update dots
+            const dots = document.querySelectorAll('.carousel-dot');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+            
+            // Update thumbnails
+            const thumbnails = document.querySelectorAll('.thumbnail-item');
+            thumbnails.forEach((thumb, index) => {
+                thumb.classList.toggle('active', index === currentSlide);
+            });
+        }
+        
+        // Initialize carousel dots and thumbnails
+        function initializeCarousel() {
+            // Create dots
+            productImages.forEach((_, index) => {
+                const dot = document.createElement('div');
+                dot.classList.add('carousel-dot');
+                if (index === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => {
+                    currentSlide = index;
+                    updateCarousel();
+                });
+                carouselDots.appendChild(dot);
+            });
+            
+            // Create thumbnails
+            productImages.forEach((image, index) => {
+                const thumbnail = document.createElement('div');
+                thumbnail.classList.add('thumbnail-item');
+                if (index === 0) thumbnail.classList.add('active');
+                thumbnail.innerHTML = `<img src="${image}" alt="Thumbnail" class="thumbnail-img">`;
+                thumbnail.addEventListener('click', () => {
+                    currentSlide = index;
+                    updateCarousel();
+                });
+                thumbnailSlider.appendChild(thumbnail);
+            });
+        }
+        
+        initializeCarousel();
+        
+        carouselPrev.addEventListener('click', () => {
+            currentSlide = (currentSlide === 0) ? productImages.length - 1 : currentSlide - 1;
+            updateCarousel();
+        });
+        
+        carouselNext.addEventListener('click', () => {
+            currentSlide = (currentSlide === productImages.length - 1) ? 0 : currentSlide + 1;
+            updateCarousel();
+        });
+        
+        // Color Options
+        colorOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                // Remove active class from all options
+                colorOptions.forEach(opt => opt.classList.remove('active'));
+                
+                // Add active class to clicked option
+                option.classList.add('active');
+                
+                // Update main image
+                const imageUrl = option.getAttribute('data-image');
+                if (imageUrl) {
+                    productCarousel.querySelector('.carousel-img').src = imageUrl;
+                }
+            });
+        });
+        
+        // Size Guide Modal
+        sizeGuideBtn.addEventListener('click', () => {
+            sizeModal.style.display = 'flex';
+        });
+        
+        closeModal.addEventListener('click', () => {
+            sizeModal.style.display = 'none';
+        });
+        
+        window.addEventListener('click', (e) => {
+            if (e.target === sizeModal) {
+                sizeModal.style.display = 'none';
+            }
+        });
+        
+        // Smooth Scroll
+        scrollDown.addEventListener('click', () => {
+            window.scrollTo({
+                top: window.innerHeight,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Sticky Banner
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                stickyBanner.classList.add('show');
+            } else {
+                stickyBanner.classList.remove('show');
+            }
+            
+            // Check for elements to animate
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                if (elementTop < window.innerHeight - 100) {
+                    element.classList.add('show');
+                }
+            });
+        });
+        
+        // Auto-scroll testimonials
+        let testimonialIndex = 0;
+        const testimonialCards = document.querySelectorAll('.testimonial-card');
+        
+        function scrollTestimonials() {
+            testimonialIndex = (testimonialIndex + 1) % testimonialCards.length;
+            testimonialCards.forEach((card, index) => {
+                card.classList.toggle('active', index === testimonialIndex);
+            });
+            
+            if (window.innerWidth < 992) {
+                testimonialTrack.style.transform = `translateX(-${testimonialIndex * 100}%)`;
+            }
+        }
+        
+        // Setup automatic testimonial scrolling
+        setInterval(scrollTestimonials, 5000);
+        
+        // Dynamic counters
+        function updateViewersCount() {
+            const baseCount = 1800;
+            const variation = Math.floor(Math.random() * 700); // Random variation between 0-700
+            viewersCounter.textContent = baseCount + variation;
+        }
+        
+        function updateStockCount() {
+            let currentStock = parseInt(stockCounter.textContent);
+            if (Math.random() > 0.7 && currentStock > 5) {
+                currentStock -= 1;
+                stockCounter.textContent = currentStock;
+                
+                // Flash the stock indicator
+                stockCounter.style.color = '#ff0000';
+                setTimeout(() => {
+                    stockCounter.style.color = '#e74c3c';
+                }, 300);
+            }
+        }
+        
+        // Countdown Timer
+        let hours = 23;
+        let minutes = 59;
+        let seconds = 59;
+        
+        function updateTimer() {
+            seconds--;
+            if (seconds < 0) {
+                seconds = 59;
+                minutes--;
+                if (minutes < 0) {
+                    minutes = 59;
+                    hours--;
+                    if (hours < 0) {
+                        hours = 23; // Reset to 24 hours
+                    }
+                }
+            }
+            
+            // Update display
+            timerHours.textContent = hours.toString().padStart(2, '0');
+            timerMins.textContent = minutes.toString().padStart(2, '0');
+            timerSecs.textContent = seconds.toString().padStart(2, '0');
+        }
+        
+        // Setup intervals
+        setInterval(updateViewersCount, 3000);
+        setInterval(updateStockCount, 15000);
+        setInterval(updateTimer, 1000);
+        
+        // Initial calls
+        updateViewersCount();
+        updateTimer();
+        
+        // Initialize animation for visible elements
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                fadeElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    if (elementTop < window.innerHeight - 100) {
+                        element.classList.add('show');
+                    }
+                });
+            }, 300);
+        });
+    </script>
+</body>
+</html>
